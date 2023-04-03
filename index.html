@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <title>Color Clock</title>
+
+</head>
+<link rel="stylesheet" href="class.css">
+
+<body>
+    <h1>
+        <center>><p style="color: rgb(228, 13, 13);">Welcome to Paz Clock</p>
+        </center>
+    </h1>
+    <div id="clock" class="red"></div>
+    <center>
+        <H1>Real time clock ^</H1>
+    </center>
+    <center><input placeholder="please enter your name..." id="username" type="text"></center>
+    <center><input type="tyoe your name here"></center>
+    <br>
+    <center><button onclick="printnamebackwards()" class="button">Submit</button></center>
+    <center>
+        <div class="answer" id="namelen">Watch how you getting numbers of your name By paz.</div>
+    </center>
+    <center>
+        <div id="backwards1">Watch how your name getting backwards By paz.</div>
+    </center>
+    <br>
+    <br>
+    <center><button style="background-color: rgb(224, 245, 0);">Paz Homework</button></center>
+    <center><button type="button" id="red" class="btn btn-dark" onclick="changeColorRed()">click on me for
+            Redscreen</button></center>
+    <center><button type="button" id="red" class="btn btn-dark" onclick="changeColorBlack()">click on me for
+            Blackscreen</button></center>
+    <center><button type="button" id="red" class="btn btn-dark" onclick="changeColorBlue()">click on me for
+            Bluescreen</button></center>
+
+    <script>
+        // פונקציה שמקבלת 3 - פרמטרים (n1,n2,n3 ומדפיסה אותם.  האם יש לה return?
+
+
+        function combine(n1, n2, n3) {
+            let numbers = n1 + n2 + n3
+            return numbers
+        }
+
+        let numbers = combine(10, 15, 10)
+        console.log(numbers);
+
+        ////// פונקציה שמקבלת 2 - פרמטרים  שמחזירה את הסכום לדוגמא mycalc 4,9
+
+        function mycalc(p1, p2) {
+            let mycalc = p1 + p2
+            return mycalc
+        }
+        let p1 = 15
+        let p2 = 30
+        console.log(p1 + p2);
+
+        ///פונקציה מספר 3 - מקבלת 2 פרמטרים ומחזירה רק את הגדול מבניהם
+
+
+        function fun(b1, b2) {
+        }
+        let b1 = 10
+        let b2 = 20
+        console.log(b2);
+
+        ////////    פונקציה שמקבלת שלוש פרמטרים ומחזירה את הגדול מבין שלושתםֿ
+
+        function maxnumber(h1, h2, h3) {
+
+        }
+        let h1 = 200
+        let h2 = 300
+        let h3 = 400
+        console.log(h3 + h3);
+
+        ///////// תרגיל 3 - פונקציה שמוצאת את המספר הגדול מבין2   ומחזירה אותו
+
+        function testbig2numbers(n1, n2) {
+            if (n2 > n1) {
+                //return n2
+            }
+            //return n1
+            return n2 > n1 ? n2 : n1;
+        }
+        console.log(testbig2numbers(51, 50));
+
+        // פונקציה שמקבלת מערך שרצה על המערך ובודקת כמה מספריים זוגיים יש במערך וכמה מספרים אי זוגיים ואז להדפיס מה שיותר גדול
+        let ar = [1, 18, 4, 7, 8]
+        function arr(array) {
+
+        }
+        let even = []
+        let odd = []
+        for (let index = 0; index < ar.length; index++)
+            if (ar[index] % 2 === 0) {
+                even++
+
+                console.log(ar[index]);
+            }
+
+        ////delcare array
+        let array = [2, 4, 6, 8, 10, 11, 13, 17, 20]
+
+        //function that getting an array
+        function how_many(array) {
+
+            //declare variables
+            let count_odd = 0
+            let count_even = 0
+            //loop on the array (for)
+            for (let index = 0; index < array.length; index++) {
+
+                //if the number is odd
+                if (array[index] % 2 == 0) {
+                    count_even += 1
+                }
+                //if the number is even
+                else {
+                    count_odd += 1
+                }
+            }
+
+            console.log("More evens in counter of " + count_even);
+
+
+        }
+
+
+        how_many(array)
+
+
+        // מערך של סטרינגים לבדוק אם מילה מסוימת מופיעה במערך
+
+        let marah = ["4", "paz", "linoy", "dor"]
+        let name = "paz"
+        for (let index = 0; index < marah.length; index++) {
+            if (marah[index] == "paz") {
+                console.log("yes the word paz is found on", marah[index]);
+
+            }
+
+        }
+
+        //////////  להכין שעון אמיתי 
+
+        const monthNames = ["January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"]
+
+        function showTime() {
+            const d = new Date();
+            let second = d.getSeconds();
+            let minute = d.getMinutes();
+            let hour = d.getHours();
+            let month = d.getMonth();
+            myTime = `${hour}:${minute}:${second}` //build display
+            clock.innerHTML = myTime //display in screen
+            console.log(myTime)  //display in log
+            document.getElementById("clock").innerHTML = myTime;
+
+        }
+        setInterval(showTime, 1000)
+        mytime = `${monthNames}`
+        //console.log(monthNames[second% 12])
+        console.log(mytime + monthNames);
+        showTime()
+
+        //////
+        let remainingSeconds = 30
+        let color;
+        function runTimer() {
+
+            console.log(remainingSeconds + " seconds remaining");
+            if (remainingSeconds === 0) {
+                console.log("Timer has reached 30 seconds");
+                color = "purple";
+                clearInterval(intervalId);
+            }
+            remainingSeconds--
+
+
+        }
+        const intervalId = setInterval(runTimer, 1000); // Call runTimer() every second
+
+
+
+
+        //תוכנית 2 - להציג את השעון בתוך אתר צבעוני
+
+
+
+
+
+        function updateClock() {
+            let now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            let time = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("clock").innerHTML = time;
+
+            let color;
+            if (seconds % 4 === 0) {
+                color = "blue";
+            } else if (seconds % 4 === 1) {
+                color = "green";
+            } else if (seconds % 4 === 2) {
+                color = "red";
+
+            } else {
+                color = "purple";
+            }
+            document.getElementById("clock").className = "clock " + color;
+        }
+
+        setInterval(updateClock, 1000);
+
+
+
+        //תוכנית 3 - לכתוב לי אם זה צהריים/לילה
+
+
+        let now = new Date();
+        let seconds = now.getSeconds();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        if (hours >= 12 && hours <= 16) {
+            console.log("go eat lunch");
+
+        }
+        if (hours >= 20 && hours <= 23) {
+            console.log("goodnight");
+        }
+
+
+        // מספר 5 - שהגודל של השניות ישתנה
+
+
+
+        //   לעבוד על קלט ופלט לקבל מהמשתמש את השם שלו בלחיצה על הכפתור1
+
+
+
+
+        function switchcolor() {
+            let color = document.getElementById("colorswitch").value;
+            document.body.style.backgroundColor = color;
+        }
+
+        function changeColorBlue() {
+            let blueBtn = document.getElementById("BLue");
+            document.body.style.backgroundColor = 'blue';
+        }
+
+
+
+
+        function changeColorRed() {
+            const redBtn = document.getElementById("REd");
+            document.body.style.backgroundColor = 'red';
+        }
+
+
+
+        function changeColorBlack() {
+            const blackBtn = document.getElementById("BLack");
+            document.body.style.backgroundColor = 'black';
+        }
+
+
+        function test() {
+            if (number.value <= 10) {
+                console.log(number.value);
+                if (number.value == 2)
+                    document.body.style.backgroundColor = "red";
+                if (number.value == 3)
+                    document.body.style.backgroundColor = "green";
+                if (number.value == 4)
+                    document.body.style.backgroundColor = "blue";
+            }
+        }
+
+        // 2 לרשום כמה אותיות יש בשם שלו
+        function printnamebackwards() {
+            let user_name = document.getElementById('username').value;
+            let len = user_name.length;
+            namelen.innerHTML = (`Your name has ${len} caps.`);
+            let backwards = '';
+            for (let index = len - 1; index >= 0; index--) {
+                backwards += user_name[index];
+            }
+            backwards1.innerHTML = (`Your name spelled backwards is ${backwards}`);
+        }
+
+
+    //מספר 4 * - מתודה setintervalk גורם לכפתור לזוז דורש מלאנתלפיים מחקר
+
+
+
+    </script>
+</body>
+
+</html>

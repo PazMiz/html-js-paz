@@ -1,0 +1,26 @@
+.clock {
+    font-size: 60px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .blue {
+    color: blue;
+  }
+  
+  .green {
+    color: green;
+  }
+  
+  .red {
+    color: red;
+  }
+  
+  .purple {
+    color: purple;
+  }
+  .black {
+    color: rgb(7, 6, 6);
+  }
+  
+  
